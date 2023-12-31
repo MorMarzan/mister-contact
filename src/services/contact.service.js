@@ -14,13 +14,13 @@ _createContacts()
 
 async function query(filterBy = {}) {
     try {
-        if (!filterBy.txt) filterBy.txt = ''
-        if (!filterBy.tel) filterBy.tel = ''
+        if (!filterBy.name) filterBy.name = ''
         if (!filterBy.gender) filterBy.gender = 'all'
-        const regExp = new RegExp(filterBy.txt, 'i')
+        const regExp = new RegExp(filterBy.name, 'i')
 
         var contacts = await storageService.query(STORAGE_KEY)
-        contacts = contacts.filter(contact => regExp.test(contact.name) && contact.tel === filterBy.tel)
+        contacts = contacts.filter(contact => regExp.test(contact.name))
+        if (filterBy.tel) contacts.filter(contact => contact.tel === filterBy.tel)
         if (filterBy.gender !== 'all') contacts = contacts.filter(contact => contact.gender === filterBy.gender)
 
         return contacts
@@ -72,7 +72,7 @@ function getEmptyContact() {
 }
 
 function getDefaultFilter() {
-    return { name: '', tel: '', filter: 'all' }
+    return { name: '', tel: '', gender: 'all' }
 }
 
 function _createContacts() {
