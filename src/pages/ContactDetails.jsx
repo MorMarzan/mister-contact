@@ -34,6 +34,7 @@ export function ContactDetails() {
 
             <h2>Name: {contact.name}</h2>
             <h2>Tel: {contact.tel}</h2>
+            <h2>Gender: {contact.gender}</h2>
         </section>
     )
 }
