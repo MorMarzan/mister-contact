@@ -7,7 +7,7 @@ export const contactService = {
     save,
     remove,
     getEmptyContact,
-    // getDefaultFilter,
+    getDefaultFilter,
 }
 
 _createContacts()
@@ -65,9 +65,9 @@ function getEmptyContact() {
     }
 }
 
-// function getDefaultFilter() {
-//     return { txt: '', maxPrice: '', labels: [], inStock: 'all', sortBy: 'createdAt' }
-// }
+function getDefaultFilter() {
+    return { name: '', tel: '' }
+}
 
 function _createContacts() {
     const contactsFromStorage = JSON.parse(localStorage.getItem(STORAGE_KEY))
