@@ -14,10 +14,10 @@
     }
 
     &.success {
-        background-color: var(--clr1);
+        background-color: $clr-base1;
     }
 
     &.error {
-        background-color: var(--clr2);
+        background-color: $clr-base1;
     }
 }

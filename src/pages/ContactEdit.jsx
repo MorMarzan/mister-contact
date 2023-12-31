@@ -10,6 +10,8 @@ import { loadContact, saveContact } from '../store/actions/contact.actions.js'
 
 export function ContactEdit() {
     const [contactToEdit, setContactToEdit] = useState(contactService.getEmptyContact())
+    const [selectedGender, setSelectedGender] = useState(contactToEdit.gender || '')
+
     const { contactId } = useParams()
     const navigate = useNavigate()
 
@@ -31,6 +33,11 @@ export function ContactEdit() {
     function handleChange({ target }) {
         const field = target.name
         const value = target.type === 'number' ? +target.value || '' : target.value
+
+        if (field === 'gender') {
+            setSelectedGender(value)
+        }
+
         setContactToEdit((prevContact) => ({ ...prevContact, [field]: value }))
     }
 

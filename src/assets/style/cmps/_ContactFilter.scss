@@ -1,7 +1,7 @@
 @import '../setup/vars';
 
-.toy-filter {
-    background-color: $clr2bg;
+.contact-filter {
+    background-color: $clr-base1;
     margin-block-start: -102px;
     padding: 0.5rem;
     padding-block: 73px;
@@ -53,18 +53,18 @@
     }
 
     .btn-label {
-        background-color: $clr-btn-filter;
+        background-color: $clr-base2;
         width: 70px;
         height: 70px;
         text-align: center;
-        color: $clr1bg;
+        color: $clr-base1;
 
         &:hover {
-            background-color: $clr1;
+            background-color: $clr-base3;
         }
 
         &.active {
-            background-color: $clr1;
+            background-color: $clr-base3;
             color: black;
         }
     }

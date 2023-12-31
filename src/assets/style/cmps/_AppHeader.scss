@@ -2,8 +2,11 @@
 
 .app-header {
   grid-column: 1 / -1;
-  background-color: $clr1;
-  color: $clr1bg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $clr-base3;
+  color: $clr-0;
   padding: 1em 0;
   font-size: .8rem;
 
@@ -16,7 +19,7 @@
     margin-inline-end: 1.3rem;
 
     a.active {
-      color: $gray3;
+      color: $clr-base1;
     }
   }
 

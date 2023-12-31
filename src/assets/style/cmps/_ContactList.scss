@@ -1,12 +1,12 @@
 @import '../setup/vars';
 
-.toy-list {
+.contact-list {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     align-content: start;
     padding: 0 .6rem;
-    background-color: $clr1;
+    background-color: $clr-base1;
 
     li {
         display: flex;
@@ -14,10 +14,10 @@
         align-self: start;
         justify-content: space-around;
         margin: 0.5em;
-        background-color: $clr2bg;
+        background-color: $clr-base2;
 
         &:hover {
-            background-color: darken($clr2bg, 5%);
+            background-color: darken($clr-base2, 5%);
         }
     }
 }

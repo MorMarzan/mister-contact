@@ -2,7 +2,7 @@
 
 button {
     cursor: pointer;
-    background-color: $clr2bg;
+    background-color: $clr-base1;
     margin: 0.5em;
     border: 0;
     padding: 0.5em 0.8em;
@@ -10,13 +10,13 @@ button {
 }
 
 button:hover {
-    background-color: $clr2;
+    background-color: $clr-base1;
     color: $clr-1;
     transition: .3s;
 }
 
 input:focus {
-    background-color: $clr1bg;
+    background-color: $clr-base1;
     transition: background-color 1s;
 }
 
@@ -27,6 +27,6 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $clr1;
+    background-color: $clr-1;
     padding: 50px;
 }

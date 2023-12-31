@@ -1,6 +1,6 @@
 @import '../setup/vars';
 
-.toy-preview {
+.contact-preview {
     position: relative;
     text-align: center;
     padding: 1rem;
@@ -8,22 +8,9 @@
     border-radius: 1rem;
     transition: background-color 0.3s;
 
-    h4 {
-        text-transform: capitalize;
-        color: $gray3;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    span {
-        color: $clr-price;
-    }
-
-    .img-container {
-        height: rem(150px);
-        width: rem(150px);
+    img {
+        height: rem(120px);
+        width: rem(120px);
         border-radius: 50%;
     }
 

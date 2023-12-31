@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 // import { ContactList } from "../cmps/ContactList"
 // import { ContactFilter } from "../cmps/ContactFilter"
@@ -52,7 +52,6 @@ export function ContactIndex() {
     // }
 
     // const { name, tel } = filterBy
-    // console.log('isLoading', isLoading)
 
     return (
         <>
@@ -64,7 +63,6 @@ export function ContactIndex() {
                     user={user}
                 /> */}
 
-                {/* <h1>hi from index</h1> */}
                 <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
             </section>
         </>
