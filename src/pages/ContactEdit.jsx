@@ -78,7 +78,30 @@ export function ContactEdit() {
                     name="tel"
                     id="tel"
                 />
-
+                <div>
+                    <label>Gender:</label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="m"
+                            checked={selectedGender === 'm'}
+                            onChange={handleChange}
+                        />{' '}
+                        Male
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="f"
+                            checked={selectedGender === 'f'}
+                            onChange={handleChange}
+                        />{' '}
+                        Female
+                    </label>
+                    {/* Add more options if needed */}
+                </div>
                 <button>{contactToEdit._id ? 'Edit' : 'Add'} Contact</button>
             </form>
         </section>
