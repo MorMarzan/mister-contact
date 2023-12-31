@@ -3,7 +3,7 @@
 export function Home() {
     return (
         <section className='home'>
-            <h2>Welcommmme!</h2>
+            <h2>Welcome!</h2>
         </section >
     )
 }
