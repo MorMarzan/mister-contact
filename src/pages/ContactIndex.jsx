@@ -50,7 +50,7 @@ export function ContactIndex() {
 
 
     return (
-        <section className="contact-index main-layout full">
+        <section className="contact-index main-layout full page">
             <ContactFilter
                 filterBy={filterBy}
                 onSetFilterBy={onSetFilter}

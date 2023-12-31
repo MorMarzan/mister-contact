@@ -29,7 +29,7 @@ export function ContactDetails() {
 
     if (!contact) return <div>Loading...</div>
     return (
-        <section className="contact-details">
+        <section className="contact-details page">
             <h1>Contact Details</h1>
 
             <h2>Name: {contact.name}</h2>
