@@ -6,15 +6,11 @@ export const ADD_CONTACT = 'ADD_CONTACT'
 export const UPDATE_CONTACT = 'UPDATE_CONTACT'
 export const SET_FILTER_BY = 'SET_FILTER_BY'
 export const SET_SORT_BY = 'SET_SORT_BY'
-export const UPDATE_MSG = 'UPDATE_MSG'
-export const ADD_MSG = 'ADD_MSG'
-
-export const SET_IS_LOADING = 'SET_IS_LOADING'
 
 const initialState = {
     contacts: [],
-    isLoading: false,
-    filterBy: contactService.getDefaultFilter(),
+    filterBy: {},
+    // filterBy: contactService.getDefaultFilter(),
     sortBy: { type: '', dir: 1 }
 }
 
@@ -42,20 +38,6 @@ export function contactReducer(state = initialState, action = {}) {
 
         case SET_SORT_BY:
             return { ...state, sortBy: { ...state.sortBy, ...action.sortBy } }
-
-        case ADD_MSG:
-            const contacts = state.contacts.map(contact => {
-                if (contact._id === action.contactId) {
-                    const updatedMsgs = contact.msgs ? [...contact.msgs, action.msg] : [action.msg]
-                    // console.log('updated contact with msg from reducer', { ...contact, msgs: updatedMsgs })
-                    return { ...contact, msgs: updatedMsgs }
-                }
-                return contact
-            })
-            return { ...state, contacts }
-
-        case SET_IS_LOADING:
-            return { ...state, isLoading: action.isLoading }
 
         default:
             return state
