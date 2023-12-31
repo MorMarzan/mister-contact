@@ -6,6 +6,7 @@ import { store } from './store/store'
 import { Home } from './pages/Home.jsx'
 import { ContactIndex } from './pages/ContactIndex.jsx'
 import { ContactDetails } from './pages/ContactDetails.jsx'
+import { ContactEdit } from './pages/ContactEdit.jsx'
 
 
 export function App() {
@@ -20,6 +21,8 @@ export function App() {
               <Route element={<Home />} path="/" />
               <Route element={<ContactIndex />} path="/contact" />
               <Route element={<ContactDetails />} path="/contact/:contactId" />
+              <Route element={<ContactEdit />} path="/contact/edit" />
+              <Route element={<ContactEdit />} path="/contact/edit/:contactId" />
             </Routes>
           </main>
           {/* <AppFooter /> */}
