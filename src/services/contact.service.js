@@ -76,15 +76,18 @@ function _createContacts() {
         const contacts = [
             {
                 name: 'Mor Marzan',
-                tel: 1234567890
+                tel: 1234567890,
+                _id: '123'
             },
             {
                 name: 'Eden Rize',
-                tel: 9876543210
+                tel: 9876543210,
+                _id: '555'
             },
             {
                 name: 'Noam Saar',
-                tel: 1213141516
+                tel: 1213141516,
+                _id: '789'
             },
         ]
 
