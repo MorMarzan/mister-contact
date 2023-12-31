@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 
 import { store } from './store/store'
 import { Home } from './pages/Home.jsx'
+import { ContactIndex } from './pages/ContactIndex.jsx'
 import { ContactDetails } from './pages/ContactDetails.jsx'
 
 
@@ -17,6 +18,7 @@ export function App() {
           <main className="main-layout full app">
             <Routes>
               <Route element={<Home />} path="/" />
+              <Route element={<ContactIndex />} path="/contact" />
               <Route element={<ContactDetails />} path="/contact/:contactId" />
             </Routes>
           </main>
