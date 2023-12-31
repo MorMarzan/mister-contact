@@ -8,6 +8,7 @@ import { ContactIndex } from './pages/ContactIndex.jsx'
 import { ContactDetails } from './pages/ContactDetails.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { ContactEdit } from './pages/ContactEdit.jsx'
+import { AppFooter } from './cmps/AppFooter.jsx'
 
 
 export function App() {
@@ -26,7 +27,7 @@ export function App() {
               <Route element={<ContactEdit />} path="/contact/edit/:contactId" />
             </Routes>
           </main>
-          {/* <AppFooter /> */}
+          <AppFooter />
           {/* <UserMsg /> */}
         </section>
       </Router>
