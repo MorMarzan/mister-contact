@@ -61,7 +61,8 @@ async function save(contact) {
 function getEmptyContact() {
     return {
         name: 'New Contact',
-        tel: ''
+        tel: '',
+        gender: 'm'
     }
 }
 
@@ -77,17 +78,26 @@ function _createContacts() {
             {
                 name: 'Mor Marzan',
                 tel: 1234567890,
-                _id: '123'
+                _id: '123',
+                gender: 'f'
             },
             {
                 name: 'Eden Rize',
                 tel: 9876543210,
-                _id: '555'
+                _id: '555',
+                gender: 'f'
             },
             {
                 name: 'Noam Saar',
                 tel: 1213141516,
-                _id: '789'
+                _id: '789',
+                gender: 'f'
+            },
+            {
+                name: 'Sharon Frankel',
+                tel: 5556667778,
+                _id: 'g78',
+                gender: 'm'
             },
         ]
 
