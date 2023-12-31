@@ -15,10 +15,15 @@ _createContacts()
 async function query(filterBy = {}) {
     try {
         if (!filterBy.txt) filterBy.txt = ''
+        if (!filterBy.tel) filterBy.tel = ''
+        if (!filterBy.gender) filterBy.gender = 'all'
         const regExp = new RegExp(filterBy.txt, 'i')
 
-        const contacts = await storageService.query(STORAGE_KEY)
-        return contacts.filter(contact => regExp.test(contact.name))
+        var contacts = await storageService.query(STORAGE_KEY)
+        contacts = contacts.filter(contact => regExp.test(contact.name) && contact.tel === filterBy.tel)
+        if (filterBy.gender !== 'all') contacts = contacts.filter(contact => contact.gender === filterBy.gender)
+
+        return contacts
     } catch (error) {
         console.log('An error occurred during the query:', error)
         throw error
@@ -67,7 +72,7 @@ function getEmptyContact() {
 }
 
 function getDefaultFilter() {
-    return { name: '', tel: '' }
+    return { name: '', tel: '', filter: 'all' }
 }
 
 function _createContacts() {

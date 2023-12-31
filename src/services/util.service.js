@@ -5,7 +5,8 @@ export const utilService = {
     loadFromStorage,
     saveToStorage,
     animateCSS,
-    debounce
+    debounce,
+    capitalizeFirstLetter
 }
 
 function makeId(length = 6) {
@@ -71,4 +72,8 @@ function animateCSS(el, animation) {
         }
         el.addEventListener('animationend', handleAnimationEnd, { once: true })
     })
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
