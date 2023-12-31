@@ -13,11 +13,11 @@ export function ContactList({ contacts, onRemoveContact }) {
     return (
         <ul className="contact-list" >
             {contacts.map(contact =>
-                <li key={contact._id}>
+                <li className="contact-item" key={contact._id}>
                     <ContactPreview contact={contact} />
                     <section className="tools">
                         <Link className="btn" to={`/contact/${contact._id}`}>Details</Link>
-                        {/* <Link className="btn" to={`/contact/edit/${contact._id}`}>Edit</Link> */}
+                        <Link className="btn" to={`/contact/edit/${contact._id}`}>Edit</Link>
                         <button className="btn" onClick={() => onRemoveContact(contact._id)}>X</button>
                     </section>
                 </li>
