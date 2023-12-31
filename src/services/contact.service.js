@@ -15,14 +15,14 @@ _createContacts()
 async function query(filterBy = {}) {
     try {
         if (!filterBy.name) filterBy.name = ''
+        if (!filterBy.tel) filterBy.tel = ''
         if (!filterBy.gender) filterBy.gender = 'all'
-        const regExp = new RegExp(filterBy.name, 'i')
+        const nameRegExp = new RegExp(filterBy.name, 'i')
+        const telRegExp = new RegExp(filterBy.tel, 'i')
 
         var contacts = await storageService.query(STORAGE_KEY)
-        contacts = contacts.filter(contact => regExp.test(contact.name))
-        if (filterBy.tel) contacts.filter(contact => contact.tel === filterBy.tel)
+        contacts = contacts.filter(contact => nameRegExp.test(contact.name) && telRegExp.test(contact.tel))
         if (filterBy.gender !== 'all') contacts = contacts.filter(contact => contact.gender === filterBy.gender)
-
         return contacts
     } catch (error) {
         console.log('An error occurred during the query:', error)
@@ -82,25 +82,25 @@ function _createContacts() {
         const contacts = [
             {
                 name: 'Mor Marzan',
-                tel: 1234567890,
+                tel: '1234567890',
                 _id: '123',
                 gender: 'f'
             },
             {
                 name: 'Eden Rize',
-                tel: 9876543210,
+                tel: '9876543210',
                 _id: '555',
                 gender: 'f'
             },
             {
                 name: 'Noam Saar',
-                tel: 1213141516,
+                tel: '1213141516',
                 _id: '789',
                 gender: 'f'
             },
             {
                 name: 'Sharon Frankel',
-                tel: 5556667778,
+                tel: '5556667778',
                 _id: 'g78',
                 gender: 'm'
             },
