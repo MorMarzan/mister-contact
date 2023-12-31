@@ -2,6 +2,7 @@
 // const { Link } = ReactRouterDOM
 
 import { Link } from "react-router-dom";
+import { ContactPreview } from "./ContactPreview";
 // import { ContactPreview } from "./ContactPreview";
 
 export function ContactList({ contacts, onRemoveContact }) {
@@ -12,16 +13,14 @@ export function ContactList({ contacts, onRemoveContact }) {
     return (
         <ul className="contact-list" >
             {contacts.map(contact =>
-                // <li key={contact._id}>
-                <li key={contact.name}>
-                    <p>{contact.name}</p>
-                    {/* <ContactPreview contact={contact} /> */}
+                <li key={contact._id}>
+                    <ContactPreview contact={contact} />
                     <section className="tools">
-                        {/* <Link className="btn" to={`/contact/${contact._id}`}>Details</Link>
-                        <Link className="btn" to={`/contact/edit/${contact._id}`}>Edit</Link> */}
-                        {/* <button className="btn" onClick={() => onRemoveContact(contact._id)}>X</button> */}
+                        <Link className="btn" to={`/contact/${contact._id}`}>Details</Link>
+                        {/* <Link className="btn" to={`/contact/edit/${contact._id}`}>Edit</Link> */}
+                        <button className="btn" onClick={() => onRemoveContact(contact._id)}>X</button>
                     </section>
-                // </li>
+                </li>
             )}
         </ul>
     )
