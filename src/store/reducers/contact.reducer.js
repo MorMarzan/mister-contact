@@ -9,8 +9,8 @@ export const SET_SORT_BY = 'SET_SORT_BY'
 
 const initialState = {
     contacts: [],
-    filterBy: {},
-    // filterBy: contactService.getDefaultFilter(),
+    // filterBy: {},
+    filterBy: contactService.getDefaultFilter(),
     sortBy: { type: '', dir: 1 }
 }
 
