@@ -4,6 +4,8 @@ import { store } from "../store.js"
 
 export async function loadContacts() {
     const filterBy = store.getState().contactModule.filterBy
+    console.log('filterBy', filterBy)
+
     const sortBy = store.getState().contactModule.sortBy
     try {
         const contacts = await contactService.query(filterBy, sortBy)

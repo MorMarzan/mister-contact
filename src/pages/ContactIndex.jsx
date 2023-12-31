@@ -9,17 +9,27 @@ import { loadContacts, removeContact, setFilterBy, setSortBy } from "../store/ac
 // import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { utilService } from "../services/util.service"
 import { ContactList } from "../cmps/ContactList"
+import { ContactFilter } from "../cmps/ContactFilter"
 
 export function ContactIndex() {
 
     const contacts = useSelector(storeState => storeState.contactModule.contacts)
+    const filterBy = useSelector((storeState) => storeState.contactModule.filterBy)
     // const filterBy = useSelector(storeState => storeState.contactModule.filterBy)
     // const sortBy = useSelector(storeState => storeState.contactModule.sortBy)
-    // const debounceOnSetFilter = useRef(utilService.debounce(onSetFilter, 500))
+
 
     useEffect(() => {
-        _loadContacts()
-    }, [])
+        const fetchData = async () => {
+            try {
+                await _loadContacts()
+            } catch (error) {
+                showErrorMsgRedux('Cannot show toys')
+            }
+        }
+
+        fetchData()
+    }, [filterBy])
     // }, [filterBy, sortBy])
 
     async function _loadContacts() {
@@ -43,9 +53,9 @@ export function ContactIndex() {
         }
     }
 
-    // function onSetFilter(filterBy) {
-    //     setFilterBy(filterBy)
-    // }
+    function onSetFilter(filterBy) {
+        setFilterBy(filterBy)
+    }
 
     // function onSetSortBy(sortBy) {
     //     setSortBy(sortBy)
@@ -53,19 +63,16 @@ export function ContactIndex() {
 
     // const { name, tel } = filterBy
 
-    return (
-        <>
-            <section className="contact-index main-layout full">
-                {/* <ContactFilter
-                    filterBy={{ name, inStock, labels, maxPrice }}
-                    onSetFilter={debounceOnSetFilter.current}
-                    onSetSortBy={onSetSortBy} sortBy={sortBy}
-                    user={user}
-                /> */}
 
-                <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
-            </section>
-        </>
+    return (
+        <section className="contact-index main-layout full">
+            <ContactFilter
+                filterBy={filterBy}
+                onSetFilterBy={onSetFilter}
+            />
+
+            <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
+        </section>
     )
 
 }
