@@ -9,9 +9,9 @@ export function ContactPreview({ contact }) {
 
     return (
         <article className="contact-preview" >
+            {(gender === 'f') && <span><img src={femaleSvg} /></span>}
+            {(gender === 'm') && <span><img src={maleSvg} /></span>}
             <h3>
-                {(gender === 'f') && <span><img src={femaleSvg} /></span>}
-                {(gender === 'm') && <span><img src={maleSvg} /></span>}
                 {utilService.capitalizeFirstLetter(name)}
             </h3>
             <a href={`tel:${tel}`}>{tel}</a>

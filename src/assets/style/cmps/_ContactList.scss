@@ -20,4 +20,21 @@
             background-color: darken($clr-base2, 5%);
         }
     }
+
+    .contact-item {
+        position: relative;
+
+        .tools {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding-block: 1rem;
+        }
+
+        .tools>button {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+    }
 }
