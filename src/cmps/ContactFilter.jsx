@@ -25,16 +25,22 @@ export function ContactFilter({ filterBy, onSetFilterBy }) {
                 break
 
             default:
+
                 break
         }
+        console.log('wtf');
 
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
     }
 
     return (
         <div className="contact-filter">
+
+            <h3>Filter Contacts:</h3>
             <form>
+
                 <label>Name: <input type="text" name="name" placeholder="Name" value={filterByToEdit.name} onChange={handleChange} /></label>
+                <label>Tel: <input type="text" name="tel" placeholder="Tel" value={filterByToEdit.tel || ''} onChange={handleChange} /></label>
 
             </form>
         </div>
